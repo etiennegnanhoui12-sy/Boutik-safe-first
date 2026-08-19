@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boutik Safe</title>
+  <link rel="icon" href="icon.png">
+  <style>
+    body{margin:0;font-family:Arial,sans-serif;background:#f5f6f8;color:#1f2937}
+    main{max-width:760px;margin:0 auto;padding:48px 20px}
+    .card{background:#fff;border-radius:18px;padding:32px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+    h1{margin-top:0}
+    .choices{display:grid;gap:16px;margin-top:28px}
+    a.choice{display:block;text-decoration:none;color:inherit;border:1px solid #e5e7eb;border-radius:14px;padding:20px}
+    a.choice:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.08)}
+    .title{font-size:20px;font-weight:700;margin-bottom:6px}
+    .desc{color:#6b7280}
+    .note{margin-top:20px;color:#6b7280;font-size:14px}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="card">
+      <h1>Boutik Safe</h1>
+      <p>Choisissez comment vous souhaitez utiliser l'application.</p>
+      <div class="choices">
+        <a class="choice" href="app-release.apk" download>
+          <div class="title">📱 Télécharger pour Android</div>
+          <div class="desc">Télécharge l'application Android : app-release.apk</div>
+        </a>
+        <a class="choice" href="application.html">
+          <div class="title">🖥️ Utiliser sur PC</div>
+          <div class="desc">Ouvre directement la version Web de Boutik Safe sur l'ordinateur.</div>
+        </a>
+      </div>
+      <p class="note">Les deux fichiers sont à la racine du projet afin d'éviter les problèmes de dossiers lors du téléversement.</p>
+    </div>
+  </main>
+</body>
+</html>
