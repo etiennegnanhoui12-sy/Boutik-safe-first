@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Boutik Safe — Gestion polyvalente d'activités</title>
+<link rel="icon" href="icon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2563eb">
+<style>
+:root {
+  --blue:#2563eb; --indigo:#4f46e5; --cyan:#0891b2; --violet:#7c3aed;
+  --ink:#172554; --muted:#64748b; --bg:#f5f8ff; --white:#ffffff;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#eef5ff 0%,#f8fbff 48%,#f5f3ff 100%);color:var(--ink)}
+main{max-width:1160px;margin:auto;padding:28px 18px 64px}
+.hero{position:relative;overflow:hidden;border-radius:30px;padding:54px 42px;background:linear-gradient(135deg,#2563eb 0%,#4f46e5 52%,#7c3aed 100%);color:white;box-shadow:0 20px 50px rgba(79,70,229,.25)}
+.hero:after{content:"";position:absolute;width:330px;height:330px;border-radius:50%;background:rgba(255,255,255,.12);right:-90px;top:-100px}
+.brand{display:flex;align-items:center;gap:18px;position:relative;z-index:1}
+.brand img{width:82px;height:82px;border-radius:22px;background:white;padding:5px;object-fit:cover}
+h1{margin:0;font-size:clamp(34px,6vw,62px);letter-spacing:-1px}
+.tag{margin-top:8px;font-size:18px;font-weight:600;opacity:.95}
+.lead{position:relative;z-index:1;max-width:800px;font-size:19px;line-height:1.75;margin:30px 0 0}
+.section{margin-top:24px;background:rgba(255,255,255,.94);border:1px solid rgba(148,163,184,.22);border-radius:26px;padding:34px;box-shadow:0 12px 32px rgba(15,23,42,.06)}
+h2{font-size:30px;margin:0 0 12px;color:#1e3a8a} .intro{color:var(--muted);line-height:1.7;font-size:17px;margin-bottom:24px}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.feature{padding:20px;border-radius:18px;background:linear-gradient(145deg,#eff6ff,#f5f3ff);border:1px solid #dbeafe}
+.feature strong{display:block;color:#3730a3;font-size:17px;margin-bottom:8px}.feature p{margin:0;color:#475569;line-height:1.55}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.sector{position:relative;padding:24px 20px 20px;border-radius:20px;background:white;border:1px solid #dbeafe;min-height:175px;box-shadow:0 8px 22px rgba(37,99,235,.06)}
+.sector:nth-child(3n+2){border-color:#ddd6fe}.sector:nth-child(3n+3){border-color:#bae6fd}
+.badge{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;color:white;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--violet));margin-bottom:14px}
+.sector h3{margin:0 0 8px;font-size:19px;color:#1e3a8a}.sector p{margin:0;color:#64748b;line-height:1.55}
+.downloads{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.option{padding:26px;border-radius:22px;background:linear-gradient(145deg,#ffffff,#eff6ff);border:1px solid #dbeafe}
+.option h3{margin:0;color:#1e40af;font-size:23px}.option p{color:#64748b;line-height:1.6}
+.btn{display:block;width:100%;padding:16px;margin-top:14px;border-radius:14px;border:0;background:linear-gradient(135deg,#2563eb,#4f46e5);color:white;text-decoration:none;text-align:center;font-weight:800;font-size:16px;cursor:pointer;box-shadow:0 10px 22px rgba(37,99,235,.2)}
+.btn.alt{background:linear-gradient(135deg,#0891b2,#2563eb)}
+.credit{margin-top:28px;text-align:center;padding:18px;border-radius:18px;background:linear-gradient(90deg,#eff6ff,#f5f3ff,#ecfeff);color:#3730a3;font-size:18px;font-weight:800}
+.credit span{color:#2563eb}
+@media(max-width:600px){.hero{padding:34px 24px}.section{padding:25px 20px}.brand img{width:64px;height:64px}}
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+  <div class="brand"><img src="icon.png" alt="Boutik Safe"><div><h1>Boutik Safe</h1><div class="tag">Une solution polyvalente pour gérer et organiser votre activité</div></div></div>
+  <p class="lead">Boutik Safe est une application conçue pour aider les professionnels à organiser leurs produits, leurs articles et leurs activités. Elle permet d'adapter la gestion à différents types de commerce et de secteur, sur Android comme sur ordinateur.</p>
+</section>
+
+<section class="section">
+<h2>Ce que fait Boutik Safe</h2>
+<p class="intro">L'application regroupe les fonctions essentielles pour accompagner la gestion quotidienne d'une activité commerciale ou professionnelle.</p>
+<div class="features">
+<div class="feature"><strong>Organiser les produits</strong><p>Ajouter, présenter et gérer les articles selon votre activité.</p></div>
+<div class="feature"><strong>Gérer les informations</strong><p>Modifier et maintenir les données utiles à votre commerce ou service.</p></div>
+<div class="feature"><strong>S'adapter à votre secteur</strong><p>Utiliser l'application pour différents types de produits, activités et services.</p></div>
+<div class="feature"><strong>Travailler sur plusieurs appareils</strong><p>Utiliser Boutik Safe sur Android ou sur PC selon vos besoins.</p></div>
+<div class="feature"><strong>Utilisation hors ligne</strong><p>Après installation et mise en cache, l'application peut rester accessible sans connexion pour les ressources disponibles localement.</p></div>
+<div class="feature"><strong>Installation sur PC</strong><p>Installer la version Web comme application lorsque votre navigateur propose cette option.</p></div>
+</div>
+</section>
+
+<section class="section">
+<h2>Secteurs qui peuvent utiliser Boutik Safe</h2>
+<p class="intro">Boutik Safe n'est pas limitée à une seule catégorie de produits. Elle peut être utilisée dans plusieurs domaines.</p>
+<div class="grid"><article class="sector"><div class="badge">01</div><h3>Alimentation & commerce</h3><p>Boutiques, supermarchés, épiceries et vente de produits de consommation.</p></article>
+<article class="sector"><div class="badge">02</div><h3>Agriculture & élevage</h3><p>Activités agricoles, production, élevage et commercialisation.</p></article>
+<article class="sector"><div class="badge">03</div><h3>Véhicules & transport</h3><p>Voitures, motos, pièces détachées, location et transport.</p></article>
+<article class="sector"><div class="badge">04</div><h3>Technologie & électronique</h3><p>Téléphones, informatique, appareils et accessoires.</p></article>
+<article class="sector"><div class="badge">05</div><h3>Mode & beauté</h3><p>Vêtements, chaussures, accessoires et produits de beauté.</p></article>
+<article class="sector"><div class="badge">06</div><h3>Maison & construction</h3><p>Meubles, équipements, matériaux et outils.</p></article>
+<article class="sector"><div class="badge">07</div><h3>Industrie & équipements</h3><p>Machines, fournitures et activités de production.</p></article>
+<article class="sector"><div class="badge">08</div><h3>Services</h3><p>Prestations professionnelles, maintenance et activités tertiaires.</p></article></div>
+</section>
+
+<section class="section">
+<h2>Choisissez votre version</h2>
+<div class="downloads">
+<div class="option"><h3>Version Android</h3><p>Téléchargez l'application Android signée et installez-la sur votre téléphone.</p><a class="btn" href="app-release.apk" download>Télécharger pour Android</a></div>
+<div class="option"><h3>Version PC</h3><p>Utilisez Boutik Safe sur ordinateur et installez-la comme application lorsque votre navigateur le permet.</p><a class="btn alt" href="application.html">Ouvrir la version PC</a><button id="installBtn" class="btn" style="display:none">Installer Boutik Safe sur ce PC</button></div>
+</div>
+<div class="credit">Développé par <span>GNANHOUI Etienne</span></div>
+</section>
+</main>
+<script>
+if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js'));
+let deferredPrompt;const b=document.getElementById('installBtn');
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;b.style.display='block';});
+b.addEventListener('click',async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;b.style.display='none';});
+</script>
+</body>
+</html>
