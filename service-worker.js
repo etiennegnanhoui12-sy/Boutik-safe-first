@@ -1,4 +1,0 @@
-const CACHE_NAME='boutik-safe-v2';const ASSETS=["./", "./index.html", "./application.html", "./app-release.apk", "./icon.png", "./manifest.json", "./product-placeholder.svg", "./images/alimentaire.svg", "./images/agriculture.svg", "./images/vehicules.svg", "./images/electronique.svg", "./images/mode.svg", "./images/maison.svg", "./images/construction.svg", "./images/machines.svg", "./images/beaute.svg", "./images/services.svg"];
-self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
-self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));
-self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(x=>{const c=x.clone();caches.open(CACHE_NAME).then(k=>k.put(e.request,c));return x;}).catch(()=>caches.match('./index.html'))));});
