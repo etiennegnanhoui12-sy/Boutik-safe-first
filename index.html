@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Boutik Safe — Gestion polyvalente d'activités</title>
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-512.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2563eb">
+<style>
+:root {
+  --blue:#2563eb; --indigo:#4f46e5; --cyan:#0891b2; --violet:#7c3aed;
+  --ink:#172554; --muted:#64748b; --bg:#f5f8ff; --white:#ffffff;
+  --amber:#f5b833; --amber-deep:#c9860a; --navy-1:#0a1130; --navy-2:#141c42; --navy-3:#20134d;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#eef5ff 0%,#f8fbff 48%,#f5f3ff 100%);color:var(--ink)}
+main{max-width:1160px;margin:auto;padding:28px 18px 64px}
+.hero{position:relative;overflow:hidden;border-radius:30px;padding:54px 42px;background:linear-gradient(135deg,#2563eb 0%,#4f46e5 52%,#7c3aed 100%);color:white;box-shadow:0 20px 50px rgba(79,70,229,.25)}
+.hero:after{content:"";position:absolute;width:330px;height:330px;border-radius:50%;background:rgba(255,255,255,.12);right:-90px;top:-100px}
+.brand{display:flex;align-items:center;gap:18px;position:relative;z-index:1}
+.brand img{width:82px;height:82px;border-radius:22px;background:white;padding:5px;object-fit:cover}
+h1{margin:0;font-size:clamp(34px,6vw,62px);letter-spacing:-1px}
+.tag{margin-top:8px;font-size:18px;font-weight:600;opacity:.95}
+.lead{position:relative;z-index:1;max-width:800px;font-size:19px;line-height:1.75;margin:30px 0 0}
+.section{margin-top:24px;background:rgba(255,255,255,.94);border:1px solid rgba(148,163,184,.22);border-radius:26px;padding:34px;box-shadow:0 12px 32px rgba(15,23,42,.06)}
+h2{font-size:30px;margin:0 0 12px;color:#1e3a8a} .intro{color:var(--muted);line-height:1.7;font-size:17px;margin-bottom:24px}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.feature{padding:20px;border-radius:18px;background:linear-gradient(145deg,#eff6ff,#f5f3ff);border:1px solid #dbeafe}
+.feature strong{display:block;color:#3730a3;font-size:17px;margin-bottom:8px}.feature p{margin:0;color:#475569;line-height:1.55}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.sector{position:relative;padding:24px 20px 20px;border-radius:20px;background:white;border:1px solid #dbeafe;min-height:175px;box-shadow:0 8px 22px rgba(37,99,235,.06)}
+.sector:nth-child(3n+2){border-color:#ddd6fe}.sector:nth-child(3n+3){border-color:#bae6fd}
+.badge{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;color:white;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--violet));margin-bottom:14px}
+.sector h3{margin:0 0 8px;font-size:19px;color:#1e3a8a}.sector p{margin:0;color:#64748b;line-height:1.55}
+/* --- Panneau de téléchargement --- */
+.dl-panel{position:relative;margin-top:24px;padding:56px 42px 46px;border-radius:30px;overflow:hidden;background:linear-gradient(155deg,var(--navy-1) 0%,var(--navy-2) 55%,var(--navy-3) 100%);box-shadow:0 24px 60px rgba(10,17,48,.35)}
+.dl-panel:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:26px 26px;opacity:.5;pointer-events:none}
+.dl-panel:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(245,184,51,.16),transparent 70%);right:-120px;top:-140px;pointer-events:none}
+.dl-head{position:relative;z-index:1;max-width:640px}
+.dl-kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;color:var(--amber)}
+.dl-kicker:before{content:"";width:22px;height:2px;background:var(--amber);border-radius:2px}
+.dl-panel h2{color:#fff;font-size:32px;margin:14px 0 10px;letter-spacing:-.4px}
+.dl-panel .intro{color:#aab4d4;font-size:16.5px;margin-bottom:0}
+.trust-row{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 34px}
+.trust-pill{display:flex;align-items:center;gap:7px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#d7dcf3;font-size:13px;font-weight:700}
+.trust-pill svg{width:14px;height:14px;color:var(--amber)}
+.downloads{position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;align-items:stretch}
+.option{position:relative;display:flex;flex-direction:column;padding:30px 26px 26px;border-radius:22px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(6px);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.option:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.22);box-shadow:0 18px 40px rgba(0,0,0,.28)}
+.option.reco{border-color:rgba(245,184,51,.55);background:linear-gradient(165deg,rgba(245,184,51,.1),rgba(255,255,255,.04))}
+.option.reco:hover{box-shadow:0 18px 44px rgba(245,184,51,.18)}
+.option-icon{width:50px;height:50px;border-radius:15px;display:grid;place-items:center;margin-bottom:18px;background:linear-gradient(135deg,var(--blue),var(--violet));color:white;box-shadow:0 8px 18px rgba(79,70,229,.35)}
+.option.reco .option-icon{background:linear-gradient(135deg,var(--amber),var(--amber-deep));box-shadow:0 8px 18px rgba(245,184,51,.35)}
+.option-icon svg{width:24px;height:24px}
+.badge-reco{position:absolute;top:-13px;right:22px;display:flex;align-items:center;gap:5px;background:linear-gradient(135deg,var(--amber),var(--amber-deep));color:#241703;font-size:11.5px;font-weight:800;padding:6px 13px;border-radius:999px;box-shadow:0 6px 16px rgba(245,184,51,.4);letter-spacing:.3px}
+.badge-reco svg{width:11px;height:11px}
+.option h3{margin:0;color:#fff;font-size:20.5px;font-weight:800}
+.option p{color:#a7b0cf;line-height:1.6;font-size:14.5px;margin:8px 0 0;min-height:60px}
+.perks{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:7px;flex:1}
+.perks li{font-size:13px;color:#c9cfe8;font-weight:600;display:flex;align-items:center;gap:8px}
+.perks li:before{content:"✓";display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;background:rgba(245,184,51,.18);color:var(--amber);font-size:9.5px;font-weight:900;flex:none}
+.btn{display:block;width:100%;padding:15px;margin-top:18px;border-radius:13px;border:0;background:linear-gradient(135deg,#2563eb,#4f46e5);color:white;text-decoration:none;text-align:center;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 10px 22px rgba(37,99,235,.28);transition:filter .15s ease,transform .15s ease}
+.btn:hover{filter:brightness(1.1)}.btn:active{transform:scale(.98)}
+.option.reco .btn{background:linear-gradient(135deg,var(--amber),var(--amber-deep));color:#241703;box-shadow:0 10px 22px rgba(245,184,51,.35)}
+.btn.alt{background:linear-gradient(135deg,#0891b2,#2563eb)}
+.btn.ghost{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);color:#e7eaf7;box-shadow:none}
+.foot-note{position:relative;z-index:1;margin-top:24px;text-align:center;color:#7c86ad;font-size:12.5px}
+.credit{position:relative;z-index:1;margin-top:22px;text-align:center;padding:16px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#e7eaf7;font-size:16px;font-weight:800}
+.credit span{color:var(--amber)}
+@media(max-width:600px){.hero{padding:34px 24px}.section{padding:25px 20px}.brand img{width:64px;height:64px}.option p{min-height:0}.dl-panel{padding:38px 22px 34px}.dl-panel h2{font-size:26px}}
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+  <div class="brand"><img src="icon-512.png" alt="Boutik Safe"><div><h1>Boutik Safe</h1><div class="tag">Une solution polyvalente pour gérer et organiser votre activité</div></div></div>
+  <p class="lead">Boutik Safe est une application conçue pour aider les professionnels à organiser leurs produits, leurs articles et leurs activités. Elle permet d'adapter la gestion à différents types de commerce et de secteur, sur Android comme sur ordinateur.</p>
+</section>
+
+<section class="section">
+<h2>Ce que fait Boutik Safe</h2>
+<p class="intro">L'application regroupe les fonctions essentielles pour accompagner la gestion quotidienne d'une activité commerciale ou professionnelle.</p>
+<div class="features">
+<div class="feature"><strong>Organiser les produits</strong><p>Ajouter, présenter et gérer les articles selon votre activité.</p></div>
+<div class="feature"><strong>Gérer les informations</strong><p>Modifier et maintenir les données utiles à votre commerce ou service.</p></div>
+<div class="feature"><strong>S'adapter à votre secteur</strong><p>Utiliser l'application pour différents types de produits, activités et services.</p></div>
+<div class="feature"><strong>Travailler sur plusieurs appareils</strong><p>Utiliser Boutik Safe sur Android ou sur PC selon vos besoins.</p></div>
+<div class="feature"><strong>Utilisation hors ligne</strong><p>Après installation et mise en cache, l'application peut rester accessible sans connexion pour les ressources disponibles localement.</p></div>
+<div class="feature"><strong>Installation sur PC</strong><p>Installer la version Web comme application lorsque votre navigateur propose cette option.</p></div>
+</div>
+</section>
+
+<section class="section">
+<h2>Secteurs qui peuvent utiliser Boutik Safe</h2>
+<p class="intro">Boutik Safe n'est pas limitée à une seule catégorie de produits. Elle peut être utilisée dans plusieurs domaines.</p>
+<div class="grid"><article class="sector"><div class="badge">01</div><h3>Alimentation & commerce</h3><p>Boutiques, supermarchés, épiceries et vente de produits de consommation.</p></article>
+<article class="sector"><div class="badge">02</div><h3>Agriculture & élevage</h3><p>Activités agricoles, production, élevage et commercialisation.</p></article>
+<article class="sector"><div class="badge">03</div><h3>Véhicules & transport</h3><p>Voitures, motos, pièces détachées, location et transport.</p></article>
+<article class="sector"><div class="badge">04</div><h3>Technologie & électronique</h3><p>Téléphones, informatique, appareils et accessoires.</p></article>
+<article class="sector"><div class="badge">05</div><h3>Mode & beauté</h3><p>Vêtements, chaussures, accessoires et produits de beauté.</p></article>
+<article class="sector"><div class="badge">06</div><h3>Maison & construction</h3><p>Meubles, équipements, matériaux et outils.</p></article>
+<article class="sector"><div class="badge">07</div><h3>Industrie & équipements</h3><p>Machines, fournitures et activités de production.</p></article>
+<article class="sector"><div class="badge">08</div><h3>Services</h3><p>Prestations professionnelles, maintenance et activités tertiaires.</p></article></div>
+</section>
+
+<section class="dl-panel">
+<div class="dl-head">
+<span class="dl-kicker">Téléchargement & installation</span>
+<h2>Utiliser Boutik Safe</h2>
+<p class="intro">Une application unique, pensée pour fonctionner aussi bien sur Android que sur ordinateur — en ligne comme hors connexion, une fois installée.</p>
+</div>
+<div class="trust-row">
+<span class="trust-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>APK signé</span>
+<span class="trust-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Fonctionne hors ligne</span>
+<span class="trust-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>PC & Android</span>
+</div>
+<div class="downloads">
+
+<div class="option reco">
+<span class="badge-reco"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1 3 5v6c0 5.2 3.6 9.7 9 11 5.4-1.3 9-5.8 9-11V5z"/></svg>Recommandé</span>
+<div class="option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></div>
+<h3>Installer comme application</h3>
+<p>Sur PC (Chrome/Edge) ou sur Android : bouton ci-dessous quand il apparaît, ou icône d'installation dans la barre d'adresse.</p>
+<ul class="perks"><li>Fonctionne hors connexion</li><li>Icône sur le bureau / écran d'accueil</li><li>Une seule version, PC et Android</li></ul>
+<button id="installBtn" class="btn" style="display:none">Installer Boutik Safe</button>
+</div>
+
+<div class="option">
+<div class="option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
+<h3>Télécharger l'APK</h3>
+<p>Installez directement le fichier APK signé sur votre téléphone Android.</p>
+<ul class="perks"><li>Installation classique Android</li><li>Fonctionne hors connexion</li></ul>
+<a class="btn alt" href="app-release.apk" download>Télécharger pour Android</a>
+</div>
+
+<div class="option">
+<div class="option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></svg></div>
+<h3>Ouvrir dans le navigateur</h3>
+<p>Utilisez Boutik Safe en ligne, sur téléphone ou sur PC, sans rien installer.</p>
+<ul class="perks"><li>Aucune installation requise</li><li>Toujours la dernière version</li></ul>
+<a class="btn ghost" href="application.html">Ouvrir Boutik Safe</a>
+</div>
+
+</div>
+<p class="foot-note">La première ouverture nécessite une connexion ; l'application reste ensuite disponible hors ligne.</p>
+<div class="credit">Développé par <span>GNANHOUI Etienne</span></div>
+</section>
+</main>
+<script>
+if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js'));
+let deferredPrompt;const b=document.getElementById('installBtn');
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;b.style.display='block';});
+b.addEventListener('click',async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;b.style.display='none';});
+</script>
+</body>
+</html>
