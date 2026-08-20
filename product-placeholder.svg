@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-<rect width="800" height="600" fill="#f3f4f6"/>
-<rect x="120" y="100" width="560" height="400" rx="32" fill="#ffffff" stroke="#d1d5db" stroke-width="8"/>
-<path d="M270 390l90-110 70 80 60-70 110 100" fill="none" stroke="#9ca3af" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="330" cy="220" r="32" fill="#d1d5db"/>
-<text x="400" y="455" text-anchor="middle" font-family="Arial" font-size="34" fill="#6b7280">Produit Boutik Safe</text>
-</svg>
